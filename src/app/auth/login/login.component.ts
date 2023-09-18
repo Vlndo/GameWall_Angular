@@ -16,7 +16,14 @@ export class LoginComponent {
 
 	onSubmit(): void {
 		this.auth.login(this.form).subscribe(
+<<<<<<< Updated upstream
 			(data) => console.log(data.token),
+=======
+			(data) => {
+				console.log(data.token);
+				localStorage.setItem("token", data.token);
+			},
+>>>>>>> Stashed changes
 			(err) => console.log(err),
 		);
 	}
