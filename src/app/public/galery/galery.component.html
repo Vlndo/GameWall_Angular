@@ -1,6 +1,6 @@
 <div class="card">
     <ul *ngFor="let product of products">
-        <img src="{{product.images}}" alt="">
+        <!-- <img src="{{product.images}}" alt=""> -->
         <li>
             Titre : {{ product.title}}
         </li>
@@ -28,8 +28,8 @@
         <li>
             Edition : {{ product.edition }}
         </li>
-        <li>
-            Genres : {{ product.tags }}
+        <li *ngFor="let tag of product.tags">
+            Tags : {{ tag }}
         </li>
         <li>
             Plateformes : {{ product.platforms }}

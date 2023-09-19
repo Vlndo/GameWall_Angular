@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { ProductsService } from "src/app/_services/products.service";
+import { TagService } from "src/app/_services/tag.service";
 
 @Component({
 	selector: "app-galery",
@@ -8,11 +9,22 @@ import { ProductsService } from "src/app/_services/products.service";
 })
 export class GaleryComponent {
 	products: any[] = [];
-	constructor(private productsService: ProductsService) {}
+	tags: any[] = [];
+
+	constructor(
+		private productsService: ProductsService,
+		private tagsService: TagService,
+	) {}
 
 	ngOnInit() {
 		this.productsService.getProducts().subscribe((response) => {
 			this.products = response["hydra:member"];
+			console.log(this.products);
+		});
+
+		this.tagsService.getTags().subscribe((response) => {
+			this.tags = response["hydra:member"];
+			console.log(this.tags);
 		});
 	}
 }
