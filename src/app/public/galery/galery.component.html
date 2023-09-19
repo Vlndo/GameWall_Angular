@@ -1,1 +1,38 @@
-<p>galery works!</p>
+<div class="card">
+    <ul *ngFor="let product of products">
+        <!-- <img src="{{product.images}}" alt=""> -->
+        <li>
+            Titre : {{ product.title}}
+        </li>
+        <li>
+            Quantité : {{ product.quantity }}
+        </li>
+        <li>
+            Date de sortie : {{ product.releaseDate }}
+        </li>
+        <li>
+            Prix : {{ product.price }}
+        </li>
+        <li>
+            Description : {{ product.description }}
+        </li>
+        <li>
+            Note : {{ product.rate }}
+        </li>
+        <li>
+            Contenu du produit : {{ product.productcontent }}
+        </li>
+        <li>
+            Config requise : {{ product.requiredspecs }}
+        </li>
+        <li>
+            Edition : {{ product.edition }}
+        </li>
+        <li *ngFor="let tag of product.tags">
+            Tags : {{ tag }}
+        </li>
+        <li>
+            Plateformes : {{ product.platforms }}
+        </li>
+    </ul>
+</div>
