@@ -1,5 +1,16 @@
 <p>u-index works!</p>
+<div *ngIf="userData">
 <ul>
-    <li><a [routerLink]="['edit/:id']">Modifier profil</a></li>
-    <li><a [routerLink]="['delete/:id']">Supprimer profil</a></li>
+    <li><a [routerLink]="['edit',userData.id]">Modifier profil</a></li>
+    <li><a [routerLink]="['delete']">Supprimer profil</a></li>
 </ul>
+<div>
+  <p>email : {{ userData.email }}</p>
+  <p>name : {{ userData.name }}</p>
+</div>
+</div>
+
+
+
+
+
