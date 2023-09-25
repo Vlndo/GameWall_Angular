@@ -6,6 +6,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { PublicRoutingModule } from "./public-routing.module";
 import { PlayoutComponent } from "./playout/playout.component";
 import { PheaderComponent } from "./pheader/pheader.component";
+import { SignComponent } from './sign/sign.component';
 
 @NgModule({
 	declarations: [
@@ -14,6 +15,7 @@ import { PheaderComponent } from "./pheader/pheader.component";
 		ContactComponent,
 		PlayoutComponent,
 		PheaderComponent,
+  SignComponent,
 	],
 	imports: [CommonModule, PublicRoutingModule],
 })
