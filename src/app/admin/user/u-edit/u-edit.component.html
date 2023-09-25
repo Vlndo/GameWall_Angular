@@ -1,1 +1,30 @@
 <p>u-edit works!</p>
+<form #f="ngForm" name="form" (ngSubmit)="f.form.valid && onSubmit()">
+  <div class="form-group">
+    <label for="age">age</label>
+    <input type="number" id="age"
+           name="age"
+           [(ngModel)]="user.age"
+           #nom="ngModel"
+    >
+  </div>
+  <div class="form-group">
+    <label for="prenom">Prénom</label>
+    <input type="text" id="prenom"
+           name="prenom"
+           [(ngModel)]="user.name"
+           #prenom="ngModel"
+    >
+  </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <input type="text" id="email"
+           name="email"
+           [(ngModel)]="user.email"
+           #email="ngModel"
+    >
+  </div>
+  <div class="form-group">
+    <button type="submit">Modifier</button>
+  </div>
+</form>

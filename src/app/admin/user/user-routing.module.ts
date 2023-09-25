@@ -5,10 +5,9 @@ import { UDeleteComponent } from "./u-delete/u-delete.component";
 import { UIndexComponent } from "./u-index/u-index.component";
 
 const routes: Routes = [
-	{ path: "", redirectTo: "index", pathMatch: "full" },
-	{ path: "index", component: UIndexComponent },
-	{ path: "edit/:id", component: UEditComponent },
-	{ path: "delete/:id", component: UDeleteComponent },
+	{ path: "", component: UIndexComponent },
+	{ path: "edit/:uid", component: UEditComponent },
+	{ path: "delete/:uid", component: UDeleteComponent },
 ];
 
 @NgModule({
