@@ -11,6 +11,10 @@ ul {
 	box-shadow: 0px 0px 20px #111;
 }
 
+.tags {
+	display: flex;
+}
+
 ul li {
 	margin-bottom: 2%;
 }
