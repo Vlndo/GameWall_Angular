@@ -6,7 +6,8 @@ import { ContactComponent } from "./contact/contact.component";
 import { PublicRoutingModule } from "./public-routing.module";
 import { PlayoutComponent } from "./playout/playout.component";
 import { PheaderComponent } from "./pheader/pheader.component";
-import { SignComponent } from './sign/sign.component';
+import { SignComponent } from "./sign/sign.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
 	declarations: [
@@ -15,8 +16,8 @@ import { SignComponent } from './sign/sign.component';
 		ContactComponent,
 		PlayoutComponent,
 		PheaderComponent,
-  SignComponent,
+		SignComponent,
 	],
-	imports: [CommonModule, PublicRoutingModule],
+	imports: [CommonModule, PublicRoutingModule, FormsModule],
 })
 export class PublicModule {}

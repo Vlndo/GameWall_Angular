@@ -11,8 +11,8 @@ const routes: Routes = [
 		path: "",
 		component: PlayoutComponent,
 		children: [
-			{ path: "", redirectTo: "home", pathMatch: "full" }, //patchMatch: full pour s'assurer que les noms de routes soient identiques, tout ça sert a rediriger vers ma page home
-			{ path: "home", component: HomeComponent },
+			// { path: "", redirectTo: "home", pathMatch: "full" }, //patchMatch: full pour s'assurer que les noms de routes soient identiques, tout ça sert a rediriger vers ma page home
+			{ path: "", component: HomeComponent },
 			{ path: "galery", component: GaleryComponent },
 			{ path: "contact", component: ContactComponent },
 			{ path: "sign", component: SignComponent },
