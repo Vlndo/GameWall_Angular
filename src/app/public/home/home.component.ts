@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ImagesService } from "src/app/_services/images.service";
 // import { ProductsService } from "src/app/_services/products.service";
 
 @Component({
@@ -7,5 +8,14 @@ import { Component } from "@angular/core";
 	styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
-	// constructor(private products: ProductsService) {}
+	images: any[] = [];
+
+	constructor(private imagesService: ImagesService) {}
+
+	// ngOnInit() {
+	// 	this.imagesService.getImages().subscribe((response: Blob) => {
+	// 		this.images = response["hydra:member"];
+	// 		console.log(this.images);
+	// 	});
 }
+// }
