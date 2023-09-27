@@ -17,6 +17,14 @@
             <label for="age">Age</label>
             <input type="number" name="age" id="age" [(ngModel)]="user.age" #age="ngModel">
         </div>
+        <!-- <div class="group">
+            <label for="country">Country</label>
+            <select name="country" id="country" [(ngModel)]="user.country" #country="ngModel">
+                <option *ngFor="let country of countries" [value]="country.name">
+                    {{country.name}}
+                </option>
+            </select>
+        </div> -->
         <div class=" group">
             <button type="submit">S'inscrire</button>
         </div>
