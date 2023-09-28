@@ -1,8 +1,9 @@
 <div class="card">
     <ul *ngFor="let product of products">
         <ul>
-            <li *ngFor="let image of product.images">
-                <img src="" alt="Product Image">
+            <li>
+                <img src="http://localhost:8000/media/img/products/{{product.images[0].link}}" alt="">
+                <!-- le [0] devra etre generalisé avec un for-->
             </li>
         </ul>
         <li>
