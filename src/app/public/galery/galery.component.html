@@ -1,47 +1,13 @@
 <div class="card">
-    <ul *ngFor="let product of products">
-        <ul>
+    <ul class="product" *ngFor="let product of products" [routerLink]="['product',product.id]"
+        style="background-image: url(http://localhost:8000/media/img/products/{{product.images[0].link}}) ;">
+        <div class="description">
             <li>
-                <img src="http://localhost:8000/media/img/products/{{product.images[0].link}}" alt="">
-                <!-- le [0] devra etre generalisé avec un for-->
+                {{ product.title}}
             </li>
-        </ul>
-        <li>
-            Titre : {{ product.title}}
-        </li>
-        <li>
-            Quantité : {{ product.quantity }}
-        </li>
-        <li>
-            Date de sortie : {{ product.releaseDate }}
-        </li>
-        <li>
-            Prix : {{ product.price }}
-        </li>
-        <li>
-            Description : {{ product.description }}
-        </li>
-        <li>
-            Note : {{ product.rate }}
-        </li>
-        <li>
-            Contenu du produit : {{ product.productcontent }}
-        </li>
-        <li>
-            Config requise : {{ product.requiredspecs }}
-        </li>
-        <li>
-            Edition : {{ product.edition }}
-        </li>
-        <ul class="tags">Tags :
-            <li *ngFor="let tag of product.tags">
-                {{ tag.name }},
+            <li>
+                {{ product.price}} €
             </li>
-        </ul>
-        <ul class="tags">Plateformes :
-            <li *ngFor="let platform of product.platforms">
-                {{ platform.name }},
-            </li>
-        </ul>
+        </div>
     </ul>
 </div>

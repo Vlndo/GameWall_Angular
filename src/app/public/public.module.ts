@@ -8,6 +8,8 @@ import { PlayoutComponent } from "./playout/playout.component";
 import { PheaderComponent } from "./pheader/pheader.component";
 import { SignComponent } from "./sign/sign.component";
 import { FormsModule } from "@angular/forms";
+import { ProductComponent } from "./product/product.component";
+import { NgOptimizedImage } from "@angular/common";
 
 @NgModule({
 	declarations: [
@@ -17,7 +19,8 @@ import { FormsModule } from "@angular/forms";
 		PlayoutComponent,
 		PheaderComponent,
 		SignComponent,
+		ProductComponent,
 	],
-	imports: [CommonModule, PublicRoutingModule, FormsModule],
+	imports: [CommonModule, PublicRoutingModule, FormsModule, NgOptimizedImage],
 })
 export class PublicModule {}
