@@ -1,13 +1,23 @@
-<div class="card">
-    <ul class="product" *ngFor="let product of products" [routerLink]="['product',product.id]"
-        style="background-image: url(http://localhost:8000/media/img/products/{{product.images[0].link}}) ;">
-        <div class="description">
-            <li>
-                {{ product.title}}
-            </li>
-            <li>
-                {{ product.price}} €
-            </li>
-        </div>
-    </ul>
+
+<div class="filter-bar">
+  <input type="text" [(ngModel)]="searchQuery" (input)="filterProducts()" placeholder="Rechercher...">
+  <select [(ngModel)]="selectedPlatform" (change)="filterProducts()">
+    <option value="">Toutes les plateformes</option>
+    <option *ngFor="let platform of uniquePlatforms" [value]="platform">{{ platform }}</option>
+  </select>
+  <select [(ngModel)]="selectedTag" (change)="filterProducts()">
+    <option value="">Tous les tags</option>
+    <option *ngFor="let tag of uniqueTags" [value]="tag">{{ tag }}</option>
+  </select>
 </div>
+<div class="card">
+<div *ngFor="let product of filteredProducts">
+  <ul class="product" [routerLink]="['product', product.id]" style="background-image: url(http://localhost:8000/media/img/products/{{product.images[0].link}});">
+    <div class="description">
+      <li>{{ product.title }}</li>
+      <li>{{ product.price }} €</li>
+    </div>
+  </ul>
+</div>
+</div>
+
