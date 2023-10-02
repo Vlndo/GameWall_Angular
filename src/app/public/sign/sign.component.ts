@@ -15,7 +15,7 @@ export class SignComponent {
 		age: "",
 		isadmin: false,
 		image: "image",
-		// country: "",
+		country: "",
 	};
 	countries: any[] = [];
 	url: string = "http://127.0.0.1:8000/api/users";
