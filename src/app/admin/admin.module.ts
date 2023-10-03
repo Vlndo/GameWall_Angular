@@ -8,12 +8,13 @@ import { AheaderComponent } from './aheader/aheader.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
     AlayoutComponent,
     AheaderComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     CommonModule,

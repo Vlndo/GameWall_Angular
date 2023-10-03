@@ -1,1 +1,11 @@
 <p>b-index works!</p>
+<div *ngIf="userData">
+  <ul class="bills" >bill :
+    <li *ngFor="let bill of userData.bills">
+      <div [routerLink]="['details', bill.id]">
+        {{ bill.billNumber }},
+      </div>
+
+    </li>
+  </ul>
+</div>

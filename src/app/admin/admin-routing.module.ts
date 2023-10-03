@@ -3,12 +3,13 @@ import { RouterModule, Routes } from "@angular/router";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { AlayoutComponent } from "./alayout/alayout.component";
 
+
 const routes: Routes = [
 	{
 		path: "",
 		component: AlayoutComponent,
 		children: [
-			{ path: "", redirectTo: "dashboard", pathMatch: "full" },
+
 			{ path: "dashboard", component: DashboardComponent },
 			{
 				path: "user",
@@ -20,6 +21,7 @@ const routes: Routes = [
 				loadChildren: () =>
 					import("./bill/bill.module").then((m) => m.BillModule),
 			},
+
 		],
 	},
 ];
