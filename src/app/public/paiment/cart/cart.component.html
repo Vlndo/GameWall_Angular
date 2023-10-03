@@ -1,0 +1,24 @@
+<h1>Panier</h1>
+
+<div class="cart">
+    <div class="products">
+        <div class="items" *ngIf="cartItems.length > 0">
+            <ul *ngFor="let cartItem of cartItems">
+                <li>
+                    {{ cartItem.title }}
+                </li>
+            </ul>
+        </div>
+        <div class="items" *ngIf="cartItems.length === 0">
+            <h2>Le panier est vide</h2>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="clear">
+            <button (click)="clearCart()">Vider le panier</button>
+        </div>
+        <div class="redirection">
+            <button (click)="clearLocalStorageCart()">Retour à l'accueil</button>
+        </div>
+    </div>
+</div>

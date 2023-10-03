@@ -6,6 +6,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { PlayoutComponent } from "./playout/playout.component";
 import { SignComponent } from "./sign/sign.component";
 import { ProductComponent } from "./product/product.component";
+import { CartComponent } from "./paiment/cart/cart.component";
 
 const routes: Routes = [
 	{
@@ -18,6 +19,13 @@ const routes: Routes = [
 			{ path: "contact", component: ContactComponent },
 			{ path: "sign", component: SignComponent },
 			{ path: "galery/product/:pid", component: ProductComponent },
+			{
+				path: "paiment",
+				loadChildren: () =>
+					import("./paiment/paiment.module").then(
+						(m) => m.PaimentModule,
+					),
+			},
 		],
 	},
 ];

@@ -4,11 +4,12 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { ErrorComponent } from "./_utils/error/error.component";
+import { CartService } from "./_services/cart.service";
 
 @NgModule({
 	declarations: [AppComponent, ErrorComponent],
 	imports: [BrowserModule, AppRoutingModule, HttpClientModule],
-	providers: [],
+	providers: [CartService],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

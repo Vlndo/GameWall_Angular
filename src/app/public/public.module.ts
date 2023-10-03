@@ -10,6 +10,7 @@ import { SignComponent } from "./sign/sign.component";
 import { FormsModule } from "@angular/forms";
 import { ProductComponent } from "./product/product.component";
 import { NgOptimizedImage } from "@angular/common";
+import { CartService } from "../_services/cart.service";
 
 @NgModule({
 	declarations: [
@@ -22,5 +23,6 @@ import { NgOptimizedImage } from "@angular/common";
 		ProductComponent,
 	],
 	imports: [CommonModule, PublicRoutingModule, FormsModule, NgOptimizedImage],
+	providers: [CartService],
 })
 export class PublicModule {}
