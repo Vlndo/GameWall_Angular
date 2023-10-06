@@ -25,13 +25,11 @@ export class UEditComponent implements OnInit {
     let uid = this.activated.snapshot.paramMap.get('uid')
     this.http.get('http://127.0.0.1:8000/api/users/' + uid).subscribe(
       (data: any) => {
-        console.log(data)
         this.user = data
       })
   }
 
   onSubmit(): void {
-    console.log(this.user)
     let uid = this.activated.snapshot.paramMap.get("uid");
     const headers = new HttpHeaders({ 'Content-Type': 'application/merge-patch+json' });
 

@@ -1,11 +1,15 @@
 <p>b-index works!</p>
 <div *ngIf="userData">
-  <ul class="bills" >bill :
-    <li *ngFor="let bill of userData.bills">
-      <div [routerLink]="['details', bill.id]">
-        {{ bill.billNumber }},
+  <div class="bills" >bill :
+    <div *ngFor="let bill of userData.bills">
+    <div [routerLink]="['details', bill.id]">
+      {{ bill.billNumber }},
+      <div *ngFor="let keey of bill.keeys">
+        <img ngSrc="http://localhost:8000/media/img/products/{{keey.keyProduct.images[0].link}}" width="40"
+             height="30" priority alt="">
+        <p>titre:{{keey.keyProduct.title}}</p>
       </div>
-
-    </li>
-  </ul>
+    </div>
+  </div>
+</div>
 </div>

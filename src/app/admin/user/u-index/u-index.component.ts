@@ -22,16 +22,12 @@ export class UIndexComponent implements OnInit {
 
     if (token !== null) {
       let decoded: any = jwt_decode(token);
-      console.log(decoded);
       this.id = decoded.id;
-      console.log("ID récupéré :", this.id);
-
 
       const url = `${this.apiUrl}${this.id}`;
 
 
       this.httpClient.get(url).subscribe((data: any) => {
-        console.log("Réponse de la requête :", data);
         this.userData = data;
 
       }, (error) => {

@@ -1,1 +1,18 @@
-<p>dashboard works!</p>
+<div *ngIf="userData">
+  <div class="dasboardUserCard">
+    <div>{{userData.name}}</div>
+    <div>{{userData.email}}</div>
+  </div>
+  <div class="bills">bill :
+    <button (click)="btbill()">voir toutes vos factures</button>
+    <div *ngFor="let bill of userData.bills">
+      {{ bill.billNumber }},
+      <div *ngFor="let keey of bill.keeys">
+        <img alt="" height="30"
+             ngSrc="http://localhost:8000/media/img/products/{{keey.keyProduct.images[0].link}}" priority width="40">
+        <p>titre:{{keey.keyProduct.title}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
