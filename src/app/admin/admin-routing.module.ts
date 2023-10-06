@@ -6,10 +6,8 @@ import { AlayoutComponent } from "./alayout/alayout.component";
 
 const routes: Routes = [
 	{
-		path: "",
-		component: AlayoutComponent,
-		children: [
-
+		path: "", component: AlayoutComponent, children: [
+      { path: "", redirectTo: "dashboard", pathMatch: "full" },
 			{ path: "dashboard", component: DashboardComponent },
 			{
 				path: "user",

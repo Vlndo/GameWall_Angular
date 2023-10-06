@@ -2,7 +2,7 @@
 <div *ngIf="userData">
 <ul>
     <li><a [routerLink]="['edit',userData.id]">Modifier profil</a></li>
-    <li><a [routerLink]="['delete']">Supprimer profil</a></li>
+    <li><a [routerLink]="['delete',userData.id]">Supprimer profil</a></li>
 </ul>
 <div>
   <p>email : {{ userData.email }}</p>

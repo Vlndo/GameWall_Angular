@@ -15,9 +15,8 @@ export class BDetailsComponent implements OnInit{
 
   ngOnInit() {
     let bid = this.activated.snapshot.paramMap.get("bid");
-    console.log(bid);
+
     this.http.get(this.url + bid).subscribe((data: any) => {
-      console.log(data);
       this.bill = data;
     });
   }
