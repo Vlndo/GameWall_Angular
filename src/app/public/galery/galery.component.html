@@ -10,9 +10,10 @@
   </select>
 </div>
 <div class="card">
-  <div *ngFor="let product of filteredProducts">
+  <div *ngFor="let product of filteredProducts" class="productList">
     <ul class="product" [routerLink]="['product', product.id]"
-      style="background-image: url(http://localhost:8000/media/img/products/{{product.images[0].link}});">
+      style="background-image:  url(http://localhost:8000/media/img/products/{{product.images[0].link}});">
+      <div class="fond"></div>
       <div class="description">
         <li>{{ product.title }}</li>
         <li>{{ product.price }} €</li>

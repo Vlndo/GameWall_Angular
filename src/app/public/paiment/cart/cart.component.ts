@@ -1,37 +1,64 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { CartService } from "src/app/_services/cart.service";
+import { ProductsService } from "src/app/_services/products.service";
 
 @Component({
 	selector: "app-cart",
 	templateUrl: "./cart.component.html",
 	styleUrls: ["./cart.component.css"],
 })
-export class CartComponent {
-	cartItems: any[] = [];
-	constructor(private cartService: CartService, private router: Router) {}
+export class CartComponent implements OnInit {
+	productList!: any[];
+	products: any[] = [];
+	subTotal!: any;
 
+	constructor(
+		private product_service: ProductsService,
+		private router: Router,
+	) {}
 	ngOnInit() {
-		let cartItemsString = localStorage.getItem("cartItems");
-		if (cartItemsString) {
-			let cartItems = JSON.parse(cartItemsString);
-			if (cartItems.length > 0) {
-				console.log("contenu du panier : ", cartItems);
-				this.cartItems = cartItems;
-			} else {
-				console.log(
-					"Aucun contenu de panier trouvé dans le local storage.",
-				);
-			}
-		}
+		this.product_service.getProducts().subscribe({
+			next: (res: any) => {
+				console.log(res);
+				this.productList = res;
+			},
+			error: (error) => {
+				alert(error);
+			},
+			complete: () => {
+				console.log("Request Completed");
+			},
+		});
+
+		this.product_service.loadCart();
+		this.products = this.product_service.getProduct();
 	}
 
-	clearCart() {
-		this.cartService.clearCart();
-		this.router.navigate(["/"]);
+	//Change sub total amount
+	changeSubTotal() {
+		this.product_service.saveCart();
 	}
-	clearLocalStorageCart() {
-		this.cartService.clearLocalStorageCart();
-		this.router.navigate(["/galery"]);
+
+	//Remove a Product from Cart
+	removeFromCart(product: any) {
+		this.product_service.removeProduct(product);
+		this.products = this.product_service.getProduct();
+	}
+
+	//Calculate Total
+
+	get total() {
+		return this.products?.reduce(
+			(sum, product) => ({
+				quantityInCart: 1,
+				price: sum.price + product.quantityInCart * product.price,
+			}),
+			{ quantityInCart: 1, price: 0 },
+		).price;
+	}
+
+	checkout() {
+		localStorage.setItem("cart_total", JSON.stringify(this.total));
+		this.router.navigate(["/payment"]);
 	}
 }

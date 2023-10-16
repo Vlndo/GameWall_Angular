@@ -1,31 +1,29 @@
 <h1>Panier</h1>
 
-<div class="cart">
-    <div class="products">
-        <div class="items" *ngIf="cartItems.length > 0">
-            <ul *ngFor="let cartItem of cartItems">
-                <li>
-                    <img ngSrc="http://localhost:8000/media/img/products/{{cartItem.images[0].link}}" alt="" width="520"
-                        height="300" priority>
-                </li>
-                <li>
-                    {{ cartItem.title }}
-                </li>
-                <li>
-                    {{ cartItem.price }} €
-                </li>
-            </ul>
+<div class="">
+
+    <h2 class="">Total Price</h2>
+    <div class="">{{total}} €</div>
+    <hr>
+    <h3 class="">
+        Product Preview
+    </h3>
+    <div class="" *ngFor="let product of products; let i  = index">
+        <img ngSrc="http://localhost:8000/media/img/products/{{product.images[0].link}}" width="450" height="300"
+            priority alt="Product" alt="" class="">
+        <h5>{{product?.title}} <span>${{product?.price}}</span></h5>
+        <span class="">Product Description</span>
+        <p>
+            {{product?.description}}
+        </p>
+        <div>
+            <input [(ngModel)]="product.quantityInCart" [ngModelOptions]="{standalone: true}" min="1" type="number"
+                value="1" name="" class="" (change)="changeSubTotal()" />
+            <br />
+            <span>{{ product.quantityInCart * product?.price | number : '1.2-2'}} €</span>
         </div>
-        <div class="items" *ngIf="cartItems.length === 0">
-            <h2>Le panier est vide</h2>
-        </div>
-    </div>
-    <div class="actions">
-        <div class="clear">
-            <button (click)="clearCart()">Vider le panier</button>
-        </div>
-        <div class="redirection">
-            <button (click)="clearLocalStorageCart()">Retour à mes achats</button>
-        </div>
+
+        <button (click)="removeFromCart(product)" type="button" class="">Supprimer du panier</button>
+        <hr />
     </div>
 </div>

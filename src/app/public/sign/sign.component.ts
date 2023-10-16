@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 	templateUrl: "./sign.component.html",
 	styleUrls: ["./sign.component.css"],
 })
-export class SignComponent {
+export class SignComponent implements OnInit {
 	user: any = {
 		email: "",
 		name: "",

@@ -17,7 +17,7 @@
             Date de sortie : {{ product.releaseDate }}
         </li>
         <li>
-            Prix : {{ product.price }}
+            Prix : {{ product.price }} €
         </li>
         <li>
             Description : {{ product.description }}
@@ -44,6 +44,6 @@
                 {{ platform.name }},
             </li>
         </ul>
-        <button class="btn" (click)="addItemToCart()">Acheter</button>
+        <button class="btn" (click)="addToCart(product)">Acheter</button>
     </ul>
 </div>
