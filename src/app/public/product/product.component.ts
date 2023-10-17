@@ -38,7 +38,7 @@ export class ProductComponent implements OnInit {
 			this.product_service.addToCart(product);
 			this.products = [...this.product_service.getProduct()];
 			this.subTotal = product.price;
-			this.router.navigate(["paiment/cart"]);
+			this.router.navigate(["paiment"]);
 		}
 	}
 

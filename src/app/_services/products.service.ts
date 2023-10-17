@@ -1,5 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 import { Observable } from "rxjs";
 
 @Injectable({
@@ -9,7 +10,7 @@ export class ProductsService {
 	url = "http://127.0.0.1:8000/api/products";
 	products: any[] = [];
 
-	constructor(private http: HttpClient) {}
+	constructor(private http: HttpClient, private router: Router) {}
 
 	getProducts(): Observable<any> {
 		return this.http.get(this.url);
@@ -45,7 +46,9 @@ export class ProductsService {
 			this.saveCart();
 		}
 	}
+
 	clearProducts() {
 		localStorage.clear();
+		this.router.navigate(["galery"]);
 	}
 }

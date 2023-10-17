@@ -1,10 +1,13 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { CartComponent } from "./cart/cart.component";
+import { PaimentMethodComponent } from "./paiment-method/paiment-method.component";
+import { SuccessComponent } from "./success/success.component";
 
 const routes: Routes = [
-	{ path: "paiment", redirectTo: "paiment/cart" },
-	{ path: "cart", component: CartComponent },
+	{ path: "", component: CartComponent },
+	{ path: "paiment-method", component: PaimentMethodComponent },
+	{ path: "success", component: SuccessComponent },
 ];
 
 @NgModule({
