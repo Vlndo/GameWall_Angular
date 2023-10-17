@@ -82,9 +82,7 @@ export class PaimentMethodComponent implements OnInit {
 				);
 				if (data.status === "COMPLETED") {
 					let bill = {
-						billUser: {
-							email: localStorage.getItem("cart_email"),
-						},
+						email: localStorage.getItem("cart_email"),
 						billNumber: `${Math.floor(
 							Math.random() * 9,
 						)}${Math.floor(Math.random() * 9)}${Math.floor(
@@ -96,6 +94,8 @@ export class PaimentMethodComponent implements OnInit {
 						)}${Math.floor(Math.random() * 9)}`,
 					};
 					console.log("billNumber : ", bill.billNumber);
+					console.log("email : ", bill.email);
+					// La on créer un numero de facture et on recupere le mail du user ou celui qui a ete rentré avant l'achat, il faut maintenant envoyer tout ca en bdd
 					// this.http.post(url, bill);
 					// this.router.navigate(["/paiment/success"]);
 				}
