@@ -1,0 +1,9 @@
+.paiment {
+	display: flex;
+	position: relative;
+}
+.rightPaiment {
+	position: absolute;
+	top: 0;
+	right: 0;
+}

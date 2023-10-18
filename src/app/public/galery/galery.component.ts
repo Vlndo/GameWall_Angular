@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ProductsService } from "src/app/_services/products.service";
 
 @Component({
@@ -6,7 +6,7 @@ import { ProductsService } from "src/app/_services/products.service";
   templateUrl: "./galery.component.html",
   styleUrls: ["./galery.component.css"],
 })
-export class GaleryComponent {
+export class GaleryComponent implements OnInit{
   products: any[] = [];
   searchQuery: string = '';
   filteredProducts: any[] = [];

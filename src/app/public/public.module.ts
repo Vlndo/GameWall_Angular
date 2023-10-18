@@ -22,5 +22,6 @@ import { NgOptimizedImage } from "@angular/common";
 		ProductComponent,
 	],
 	imports: [CommonModule, PublicRoutingModule, FormsModule, NgOptimizedImage],
+	providers: [],
 })
 export class PublicModule {}
