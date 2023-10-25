@@ -1,12 +1,18 @@
 <header>
-    <nav>
-        <ul>
-            <li><a [routerLink]="['/']">Home</a></li>
-            <li><a [routerLink]="['galery']">Galery</a></li>
-            <li><a [routerLink]="['contact']">Contact</a></li>
-            <li><a [routerLink]="['admin']">Se connecter</a></li>
-            <li><a [routerLink]="['sign']">S'inscrire</a></li>
-            <li><a [routerLink]="['paiment']">Mon panier</a></li>
-        </ul>
-    </nav>
+  <nav [ngClass]="{'bg-transparent': isHomePage, 'bg-red': !isHomePage}">
+    <ul>
+      <div>
+        <li><a [routerLink]="['/']">Home</a></li>
+        <li><a [routerLink]="['galery']">Galery</a></li>
+        <li><a [routerLink]="['contact']">Contact</a></li>
+      </div>
+      <h1 class="logo">GameWall</h1>
+      <div>
+        <li><a [routerLink]="['paiment']">Mon panier</a></li>
+        <li *ngIf="!connected(); else elseblock"><a [routerLink]="['admin']">Se connecter</a>
+        </li><ng-template #elseblock><a [routerLink]="['admin']">Mon Profil</a></ng-template>
+        <li><a [routerLink]="['sign']">S'inscrire</a></li>
+      </div>
+    </ul>
+  </nav>
 </header>

@@ -13,7 +13,6 @@ const routes: Routes = [
 		path: "",
 		component: PlayoutComponent,
 		children: [
-			// { path: "", redirectTo: "home", pathMatch: "full" }, //patchMatch: full pour s'assurer que les noms de routes soient identiques, tout ça sert a rediriger vers ma page home
 			{ path: "", component: HomeComponent },
 			{ path: "galery", component: GaleryComponent },
 			{ path: "contact", component: ContactComponent },
@@ -23,8 +22,7 @@ const routes: Routes = [
 				path: "paiment",
 				loadChildren: () =>
 					import("./paiment/paiment.module").then(
-						(m) => m.PaimentModule,
-					),
+						(m) => m.PaimentModule),
 			},
 		],
 	},

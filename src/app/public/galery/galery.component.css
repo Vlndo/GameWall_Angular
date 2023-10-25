@@ -2,6 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
+  margin-top: 5%;
 }
 
 ul {
@@ -65,8 +66,30 @@ ul li {
 
 .filter-bar {
 	display: flex;
-	justify-content: center;
-	/* position: fixed;
-	top: 0px;
-	z-index: 999; */
+	margin-top: 5%;
+  background-color: white;
+  border-radius: 20px;
+  justify-content: space-between;
 }
+.filter-bar input {
+  border: none;
+  border-radius: 20px;
+  padding: 1%;
+  font-size: 1rem;
+}
+.filter-bar input:focus{
+  outline:  none;
+}
+.filter-bar input::placeholder{
+  font-family: "Barlow" , sans-serif;
+  font-size: 1rem;
+}
+.filter-bar select {
+  border: none;
+  border-radius: 20px;
+  padding: 1%;
+  font-family: "Barlow" , sans-serif;
+  font-size: 1rem;
+  background-color: white;
+}
+

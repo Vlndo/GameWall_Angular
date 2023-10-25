@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { ImagesService } from "src/app/_services/images.service";
-// import { ProductsService } from "src/app/_services/products.service";
+import {ProductsService} from "../../_services/products.service";
+
 
 @Component({
 	selector: "app-home",
@@ -8,14 +8,16 @@ import { ImagesService } from "src/app/_services/images.service";
 	styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
-	images: any[] = [];
+  products: any[] = [];
 
-	constructor(private imagesService: ImagesService) {}
+  constructor(private productService: ProductsService ) {
+  }
 
-	// ngOnInit() {
-	// 	this.imagesService.getImages().subscribe((response: Blob) => {
-	// 		this.images = response["hydra:member"];
-	// 		console.log(this.images);
-	// 	});
+  ngOnInit() {
+    this.productService.getProducts().subscribe((response) => {
+      this.products = response["hydra:member"].slice(0,6);
+
+    });
+  }
+
 }
-// }
