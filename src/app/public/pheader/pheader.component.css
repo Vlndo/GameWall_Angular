@@ -1,0 +1,30 @@
+/*.bg-transparent {*/
+/*  background-color: transparent;*/
+/*  transition: background-color 0.3s ease; !* Animation de transition douce *!*/
+/*}*/
+
+/* Navbar rouge pour les autres pages */
+/*.bg-red {*/
+/*  background-color: red; !* Vous pouvez définir la couleur que vous souhaitez *!*/
+/*  transition: background-color 0.3s ease; !* Animation de transition douce *!*/
+/*  !* Autres styles de la navbar rouge *!*/
+/*}*/
+header {
+  border-bottom: #35FF69 solid 1px;
+}
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+header nav ul div {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+}
+a:hover {
+ color: #35FF69;
+
+}

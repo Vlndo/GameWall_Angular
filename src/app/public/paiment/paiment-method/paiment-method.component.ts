@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { IPayPalConfig, ICreateOrderRequest } from "ngx-paypal";
 import { environment } from "src/app/_environment/environment";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
 	selector: "app-paiment-method",
@@ -12,16 +13,20 @@ export class PaimentMethodComponent implements OnInit {
 	public payPalConfig?: IPayPalConfig;
 	showSuccess!: any;
 	cartTotal!: any;
-	url: string = "http://127.0.0.1:8000/api/bills";
 
-	constructor(private router: Router) {}
+
+
+	constructor(private router: Router,private http:HttpClient) {}
 
 	ngOnInit(): void {
 		this.initConfig();
 		this.cartTotal =
 			JSON.parse(localStorage.getItem("cart_total") as any) || [];
 		console.log(this.cartTotal);
-	}
+
+
+
+  }
 	private initConfig(): void {
 		this.payPalConfig = {
 			currency: "EUR",
@@ -81,25 +86,21 @@ export class PaimentMethodComponent implements OnInit {
 					data,
 				);
 				if (data.status === "COMPLETED") {
-					let bill = {
-						email: localStorage.getItem("cart_email"),
-						billNumber: `${Math.floor(
-							Math.random() * 9,
-						)}${Math.floor(Math.random() * 9)}${Math.floor(
-							Math.random() * 9,
-						)}${Math.floor(Math.random() * 9)}${Math.floor(
-							Math.random() * 9,
-						)}${Math.floor(Math.random() * 9)}${Math.floor(
-							Math.random() * 9,
-						)}${Math.floor(Math.random() * 9)}`,
-					};
-					console.log("billNumber : ", bill.billNumber);
-					console.log("email : ", bill.email);
-					// La on créer un numero de facture et on recupere le mail du user ou celui qui a ete rentré avant l'achat, il faut maintenant envoyer tout ca en bdd
-					// this.http.post(url, bill);
-					// this.router.navigate(["/paiment/success"]);
-				}
-				this.showSuccess = true;
+          let bill = {
+            email: localStorage.getItem("cart_email"),
+            billNumber: `${Math.floor(
+              Math.random() * 9,
+            )}${Math.floor(Math.random() * 9)}${Math.floor(
+              Math.random() * 9,
+            )}${Math.floor(Math.random() * 9)}${Math.floor(
+              Math.random() * 9,
+            )}${Math.floor(Math.random() * 9)}${Math.floor(
+              Math.random() * 9,
+            )}${Math.floor(Math.random() * 9)}`,
+          };
+          this.router.navigate(['paiment/success'])
+        }
+          this.showSuccess = true;
 			},
 			onCancel: (data, actions) => {
 				console.log("OnCancel", data, actions);

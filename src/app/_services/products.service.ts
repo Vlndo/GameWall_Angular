@@ -51,4 +51,5 @@ export class ProductsService {
 		localStorage.clear();
 		this.router.navigate(["galery"]);
 	}
+
 }

@@ -25,6 +25,7 @@ export class GaleryComponent implements OnInit{
 
       console.log(this.products);
     });
+
   }
 
   filterProducts() {
@@ -61,4 +62,5 @@ export class GaleryComponent implements OnInit{
     });
     return Array.from(tagsSet);
   }
+
 }
