@@ -1,9 +1,44 @@
 .cart {
 	display: flex;
+	margin: 5% auto;
 }
 
 .rightCart {
 	position: fixed;
-	top: 132px;
-	right: 33px;
+	top: 50%;
+	right: 10%;
+	width: 27%;
+	padding: 2rem;
+	border-radius: 20px;
+	border: #303a3b solid 1px;
+}
+
+.interactions {
+	display: flex;
+	justify-content: space-between;
+}
+
+.emailCheck {
+	display: flex;
+	justify-content: space-between;
+}
+
+.leftCart {
+	width: 50%;
+}
+
+.leftCart img {
+	border-radius: 20px;
+}
+
+.nomPrix {
+	display: flex;
+	justify-content: space-around;
+}
+.nomPrix p:nth-child(2) {
+	width: 20%;
+}
+
+.leftCartContent {
+	margin: 5% 0 5% 0;
 }

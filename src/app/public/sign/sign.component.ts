@@ -27,6 +27,13 @@ export class SignComponent implements OnInit {
 		this.http.get(this.urlGet).subscribe((response: any) => {
 			this.countries = response["hydra:member"];
 			console.log(this.countries);
+			const defaultCountry = this.countries.find(
+				(country) => country.name === "France",
+			);
+
+			if (defaultCountry) {
+				this.user.country = defaultCountry;
+			}
 		});
 	}
 

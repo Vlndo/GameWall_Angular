@@ -1,11 +1,14 @@
-<div class="cart">
+<div class="cart container">
     <div class="leftCart">
         <h1>Panier</h1>
-        <div class="" *ngFor="let product of products; let i  = index">
-            <img ngSrc="http://localhost:8000/media/img/products/{{product.images[0].link}}" width="450" height="300"
+        <div class="leftCartContent" *ngFor="let product of products; let i  = index">
+            <img ngSrc="http://localhost:8000/media/img/products/{{product.images[0].link}}" width="350" height="200"
                 priority alt="Product" alt="" class="">
-            <h5>{{product?.title}} <span>${{product?.price}}</span></h5>
-            <span class="">Product Description</span>
+            <div class="nomPrix">
+                <p>{{product?.title}} </p>
+                <p>{{product?.price}} €</p>
+            </div>
+            <h2 class="">Description du Produit</h2>
             <p>
                 {{product?.description}}
             </p>
@@ -13,28 +16,31 @@
                 <input [(ngModel)]="product.quantityInCart" [ngModelOptions]="{standalone: true}" min="1" type="number"
                     value="1" name="" class="" (change)="changeSubTotal()" />
                 <br />
-                <span>{{ product.quantityInCart * product?.price | number : '1.2-2'}} €</span>
+                <p>{{ product.quantityInCart * product?.price | number : '1.2-2'}} €</p>
             </div>
 
             <button (click)="removeFromCart(product)" type="button" class="">Supprimer du panier</button>
         </div>
     </div>
     <div class="rightCart">
-        <div class="email" *ngIf="isVisible === true">
-            <form [formGroup]="emailForm" (ngSubmit)="setEmailForVerification(email)">
-                <label for="email">Adresse e-mail :</label>
-                <input type="email" id="email" formControlName="email" #email>
-                <button type="submit">Valider</button>
-            </form>
-            <div *ngIf="emailForm.get('email')?.hasError('required') && emailForm.get('email')?.touched">
-                Veuillez saisir une adresse e-mail.
+        <div class="rightCartContent">
+            <div class="email" *ngIf="isVisible === true">
+                <form [formGroup]="emailForm" (ngSubmit)="setEmailForVerification(email)" class="emailCheck">
+                    <input type="email" id="email" formControlName="email" #email placeholder="Email...">
+                    <button type="submit">Valider</button>
+                </form>
+                <div *ngIf="emailForm.get('email')?.hasError('required') && emailForm.get('email')?.touched">
+                    Veuillez saisir une adresse e-mail.
+                </div>
+                <div *ngIf="emailForm.get('email')?.hasError('email') && emailForm.get('email')?.touched">
+                    Veuillez saisir une adresse e-mail valide.
+                </div>
             </div>
-            <div *ngIf="emailForm.get('email')?.hasError('email') && emailForm.get('email')?.touched">
-                Veuillez saisir une adresse e-mail valide.
+            <h2 class="">Prix total : {{total | number : '1.2-2'}} €</h2>
+            <div class="interactions">
+                <button type="button" (click)="checkout()">Payer</button>
+                <button type="button" (click)="clearProducts()">Vider le panier</button>
             </div>
         </div>
-        <h2 class="">Prix total : {{total}} €</h2>
-        <button type="button" (click)="checkout()">Payer</button>
-        <button type="button" (click)="clearProducts()">Vider le panier</button>
     </div>
 </div>
