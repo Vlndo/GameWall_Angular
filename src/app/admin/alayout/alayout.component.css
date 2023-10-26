@@ -1,0 +1,14 @@
+.aLayout {
+	display: flex;
+	height: 100%;
+}
+
+.aLayoutSideBar {
+	width: 10%;
+}
+
+.aLayoutDashboard {
+	width: 60%;
+	margin: 0 auto 5% auto;
+	height: 100%;
+}

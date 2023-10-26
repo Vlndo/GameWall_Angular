@@ -1,0 +1,25 @@
+.sideBar {
+	border-right: 1px solid #303a3b;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.sideBar ul {
+	height: 60%;
+	list-style: none;
+	padding: 0;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.sideBar ul li {
+	padding: 0 3%;
+	transition: 0.4s all ease;
+}
+
+.sideBar ul li:hover {
+	margin: 0 10%;
+}

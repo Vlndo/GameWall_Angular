@@ -1,0 +1,13 @@
+.logOut {
+	border-bottom: solid 1px #35ff69;
+}
+
+.logOut .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logOut button {
+	margin: 1% 0;
+}

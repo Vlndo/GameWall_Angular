@@ -4,6 +4,11 @@
 /*font-family: 'Barlow', sans-serif;*/
 /*font-family: 'Playfair Display', serif;*/
 /*font-family: 'Roboto', sans-serif;*/
+/* Nos couleurs :  */
+/* fond : #1e2425 */
+/* fond2 :  #303a3b */
+/* tiers (vert) : #35ff69 */
+
 html {
 	height: 100%;
 }
@@ -20,6 +25,7 @@ body {
 	color: white;
 	font-family: "Barlow", sans-serif;
 	font-size: 16px;
+	height: 100%;
 }
 a {
 	text-decoration: none;
@@ -45,6 +51,8 @@ button {
 	border-radius: 50px;
 	font-family: "Barlow", sans-serif;
 	transition: all ease 0.3s;
+	height: fit-content;
+	width: fit-content;
 }
 button:hover {
 	border: #35ff69 solid 1px;
