@@ -42,3 +42,57 @@
 .leftCartContent {
 	margin: 5% 0 5% 0;
 }
+
+.quantityAndTotal {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	width: 300px;
+	margin-bottom: 5%;
+}
+
+.quantityAndTotal p {
+	margin: 0;
+	padding: 0.5rem 0;
+}
+
+.quantity {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: fit-content;
+	height: 75px;
+}
+
+@media screen and (max-width: 768px) {
+	.cart {
+		flex-direction: column;
+		margin: 5% auto;
+	}
+
+	.rightCart {
+		position: static;
+		width: 300px;
+		border-radius: 20px;
+		border: #303a3b solid 1px;
+		margin: auto;
+	}
+
+	.leftCart {
+		width: 100%;
+		text-align: center;
+	}
+
+	.quantityAndTotal {
+		width: 100%;
+	}
+
+	.container {
+		width: 100%;
+		margin: 0;
+	}
+
+	.rightCartContent {
+		width: 100%;
+	}
+}

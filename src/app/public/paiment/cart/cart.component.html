@@ -8,14 +8,12 @@
                 <p>{{product?.title}} </p>
                 <p>{{product?.price}} €</p>
             </div>
-            <h2 class="">Description du Produit</h2>
-            <p>
-                {{product?.description}}
-            </p>
-            <div>
-                <input [(ngModel)]="product.quantityInCart" [ngModelOptions]="{standalone: true}" min="1" type="number"
-                    value="1" name="" class="" (change)="changeSubTotal()" />
-                <br />
+            <div class="quantityAndTotal">
+                <div class="quantity">
+                    <label for="quantityInCart">Quantité dans le panier :</label>
+                    <input [(ngModel)]="product.quantityInCart" [ngModelOptions]="{standalone: true}" min="1"
+                        type="number" value="1" name="quantityInCart" class="" (change)="changeSubTotal()" />
+                </div>
                 <p>{{ product.quantityInCart * product?.price | number : '1.2-2'}} €</p>
             </div>
 
