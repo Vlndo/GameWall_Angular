@@ -1,26 +1,28 @@
 <div class="form_container">
     <form action="" name="register_form" #f="ngForm" (ngSubmit)=onSubmit()>
-        <div class="group">
-            <label for="email">Email</label>
-            <input type="mail" name="email" id="email" [(ngModel)]="user.email" #email="ngModel" required>
+        <div class="credantials">
+            <div class="group">
+                <input type="mail" name="email" id="email" [(ngModel)]="user.email" #email="ngModel" required
+                    placeholder="Email">
+            </div>
+            <div class="group">
+                <input type="password" name="userPassword" id="userPassword" [(ngModel)]="user.plainPassword"
+                    #userPassword="ngModel" placeholder="Mot de passe" required>
+            </div>
+        </div>
+        <div class="credantials">
+            <div class="group">
+                <input type="text" name="userName" id="userName" [(ngModel)]="user.name" #userName="ngModel"
+                    placeholder="Name" required>
+            </div>
+            <div class="group">
+                <input type="number" name="age" id="age" [(ngModel)]="user.age" #age="ngModel" placeholder="Age" min="1"
+                    required>
+            </div>
         </div>
         <div class="group">
-            <label for="userName">Pseudo</label>
-            <input type="text" name="userName" id="userName" [(ngModel)]="user.name" #userName="ngModel">
-        </div>
-        <div class="group">
-            <label for="userPassword">Mot de passe</label>
-            <input type="password" name="userPassword" id="userPassword" [(ngModel)]="user.plainPassword"
-                #userPassword="ngModel">
-        </div>
-        <div class="group">
-            <label for="age">Age</label>
-            <input type="number" name="age" id="age" [(ngModel)]="user.age" #age="ngModel">
-        </div>
-        <div class="group">
-            <label for="country">Country</label>
             <select name="country" id="country" [(ngModel)]="user.country" #country="ngModel">
-                <option *ngFor="let country of countries" value="api/countries/{{country.id}}">
+                <option *ngFor="let country of countries" [ngValue]="country" required>
                     {{country.name}}
                 </option>
             </select>

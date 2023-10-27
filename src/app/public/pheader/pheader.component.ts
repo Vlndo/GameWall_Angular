@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import {NavigationEnd, Router} from "@angular/router";
-import {TokenService} from "../../_services/token.service";
+import { NavigationEnd, Router } from "@angular/router";
+import { TokenService } from "../../_services/token.service";
 
 @Component({
 	selector: "app-pheader",
@@ -8,19 +8,23 @@ import {TokenService} from "../../_services/token.service";
 	styleUrls: ["./pheader.component.css"],
 })
 export class PheaderComponent {
-  isHomePage: boolean;
+	isHomePage: boolean;
+	isMenuOpen = false;
 
-  constructor(private router: Router, private token:TokenService) {
-    this.isHomePage = true;
+	constructor(private router: Router, private token: TokenService) {
+		this.isHomePage = true;
 
-    router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.isHomePage = (event.url === '/');
-      }
-    });
+		router.events.subscribe((event) => {
+			if (event instanceof NavigationEnd) {
+				this.isHomePage = event.url === "/";
+			}
+		});
+	}
+	connected() {
+		return this.token.isLogged();
+	}
 
-  }
-  connected() {
-    return this.token.isLogged();
-  }
+	toggleMenu() {
+		this.isMenuOpen = !this.isMenuOpen;
+	}
 }

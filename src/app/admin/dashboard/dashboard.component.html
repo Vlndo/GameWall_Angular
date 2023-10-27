@@ -1,18 +1,19 @@
-<div *ngIf="userData">
+<div *ngIf="userData" class="userData">
   <div class="dasboardUserCard">
+    <h2>Mes Infos :</h2>
     <div>{{userData.name}}</div>
     <div>{{userData.email}}</div>
   </div>
-  <div class="bills">bill :
+  <div class="bills">
+    <h2>Mes factures :</h2>
     <button (click)="btbill()">voir toutes vos factures</button>
     <div *ngFor="let bill of userData.bills">
       {{ bill.billNumber }},
       <div *ngFor="let keey of bill.keeys">
-        <img alt="" height="30"
-             ngSrc="http://localhost:8000/media/img/products/{{keey.keyProduct.images[0].link}}" priority width="40">
+        <img alt="" height="30" ngSrc="http://localhost:8000/media/img/products/{{keey.keyProduct.images[0].link}}"
+          priority width="40">
         <p>titre:{{keey.keyProduct.title}}</p>
       </div>
     </div>
   </div>
 </div>
-

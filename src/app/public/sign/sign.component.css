@@ -1,0 +1,77 @@
+select {
+	appearance: none;
+	width: 200px;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #303a3b;
+	color: #fff;
+	font-size: 1rem;
+	cursor: pointer;
+	outline: none;
+}
+
+select option {
+	background-color: #1e2425;
+	color: #fff;
+	font-size: 1rem;
+}
+
+select option:hover {
+	background-color: #35ff69;
+	color: #1e2425;
+}
+
+select option:checked {
+	background-color: #35ff69;
+	color: #1e2425;
+}
+
+.credantials {
+	display: flex;
+	justify-content: space-between;
+	width: 35%;
+	margin: auto;
+	align-items: center;
+}
+
+.credantials:first-child {
+	margin-top: 5%;
+}
+
+.group:last-child {
+	margin: 5% 0;
+}
+
+.group:last-child,
+.group:nth-child(3) {
+	text-align: center;
+}
+
+/* Styles généraux pour les éléments input */
+.form_container input {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #303a3b;
+	color: #fff;
+	font-size: 1rem;
+	margin-bottom: 10px;
+	outline: none;
+}
+
+/* Style des éléments input lorsqu'ils sont en focus (clic) */
+.form_container input:focus {
+	background-color: #1e2425;
+}
+
+/* Style des éléments input en erreur (exemple : champ invalide) */
+.form_container input.error {
+	border: 2px solid #ff0000; /* Bordure rouge pour indiquer une erreur */
+}
+
+/* Style des éléments input en succès (exemple : champ valide) */
+.form_container input.success {
+	border: 2px solid #35ff69; /* Bordure verte pour indiquer un succès */
+}

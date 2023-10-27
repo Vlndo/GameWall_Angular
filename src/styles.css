@@ -4,51 +4,73 @@
 /*font-family: 'Barlow', sans-serif;*/
 /*font-family: 'Playfair Display', serif;*/
 /*font-family: 'Roboto', sans-serif;*/
+/* Nos couleurs :  */
+/* fond : #1e2425 */
+/* fond2 :  #303a3b */
+/* tiers (vert) : #35ff69 */
+
 html {
-  height: 100%;
+	height: 100%;
 }
 
 body {
-margin: 0;
-  background-color: #1E2425;
-  background-position:center ;
-  background-repeat: no-repeat ;
-  background-size: cover;
-  box-sizing: border-box;
-  overflow-x: hidden;
-  width: 100%;
-  color: white;
-  font-family: "Barlow" ,sans-serif;
-  font-size: 20px;
+	margin: 0;
+	background-color: #1e2425;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-sizing: border-box;
+	overflow-x: hidden;
+	width: 100%;
+	color: white;
+	font-family: "Barlow", sans-serif;
+	font-size: 16px;
+	height: 100%;
 }
 a {
-  text-decoration: none;
-  color: white;
-  transition:all ease 0.3s;
+	text-decoration: none;
+	color: white;
+	transition: all ease 0.3s;
 }
-a:hover{
-  cursor: pointer;
+a:hover {
+	cursor: pointer;
 }
-.container{
-  width: 80%;
-  margin: auto;
+.container {
+	width: 80%;
+	margin: auto;
 }
 .logo {
-  font-family: 'Amita', serif;
-  color: #35FF69;
+	font-family: "Amita", serif;
+	color: #35ff69;
 }
-button{
-  background-color:#1E2425 ;
-  padding: 1%;
-  color: #35FF69;
-  border: #35FF69 solid 1px;
-  border-radius: 50px;
-  font-family: "Barlow" , sans-serif;
-  transition: all ease 0.3s;
+button {
+	background-color: #1e2425;
+	padding: 0.5rem;
+	color: #35ff69;
+	border: #35ff69 solid 1px;
+	border-radius: 50px;
+	font-family: "Barlow", sans-serif;
+	transition: all ease 0.3s;
+	height: fit-content;
+	width: fit-content;
 }
-button:hover{
-  border: #35FF69 solid 1px;
-  color: #1E2425;
-  background-color: #35FF69;
-  cursor: pointer;
+button:hover {
+	border: #35ff69 solid 1px;
+	color: #1e2425;
+	background-color: #35ff69;
+	cursor: pointer;
+}
+
+input {
+	border: none;
+	border-radius: 20px;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+input:focus {
+	outline: none;
+}
+input::placeholder {
+	font-family: "Barlow", sans-serif;
+	font-size: 1rem;
 }
