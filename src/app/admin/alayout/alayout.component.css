@@ -1,6 +1,6 @@
 .aLayout {
 	display: flex;
-	height: 100%;
+	height: fit-content;
 }
 
 .aLayoutSideBar {
@@ -9,6 +9,6 @@
 
 .aLayoutDashboard {
 	width: 60%;
-	margin: 0 auto 5% auto;
+	margin: 10% auto;
 	height: 100%;
 }

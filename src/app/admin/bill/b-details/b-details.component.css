@@ -1,0 +1,16 @@
+ul {
+	list-style: none;
+}
+.billCard {
+	border: #303a3b solid 1px;
+	padding: 10px;
+	border-radius: 10px;
+	margin: auto;
+	transition: all ease 0.3s;
+}
+
+.billCard img {
+	width: 500px;
+	height: auto;
+	border-radius: 10px;
+}

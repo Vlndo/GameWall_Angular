@@ -1,0 +1,38 @@
+.form_container {
+	border: #303a3b solid 1px;
+	border-radius: 10px;
+	padding: 50px;
+	height: 250px;
+}
+
+.form_container form {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.form_container form .form-group {
+	width: 80%;
+	margin: auto;
+}
+
+.form_container form .form-group:last-child {
+	text-align: center;
+}
+
+.form_container input {
+	width: 100%;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #303a3b;
+	color: #fff;
+	font-size: 1rem;
+	margin-bottom: 0 auto 10px auto;
+	outline: none;
+}
+
+.form_container input:focus {
+	background-color: #1e2425;
+	border: #303a3b solid 1px;
+}

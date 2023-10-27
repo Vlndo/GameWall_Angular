@@ -1,49 +1,73 @@
 <div class="card">
-    <ul *ngIf="product">
-        <ul>
+    <ul *ngIf="product" class="productContent">
+        <ul class="productLeft">
+            <ul>
+                <li>
+                    <img ngSrc="http://localhost:8000/media/img/products/{{product.images[0].link}}" width="450"
+                        height="300" priority alt="">
+                    <!-- le [0] devra etre generalisé avec un for-->
+                </li>
+            </ul>
             <li>
-                <img ngSrc="http://localhost:8000/media/img/products/{{product.images[0].link}}" width="450"
-                    height="300" priority alt="">
-                <!-- le [0] devra etre generalisé avec un for-->
+                <h2>Date de sortie : </h2>
+                <p>
+                    {{ product.releaseDate }}
+                </p>
             </li>
-        </ul>
-        <li>
-            Titre : {{ product.title}}
-        </li>
-        <li>
-            Quantité : {{ product.quantity }}
-        </li>
-        <li>
-            Date de sortie : {{ product.releaseDate }}
-        </li>
-        <li>
-            Prix : {{ product.price }} €
-        </li>
-        <li>
-            Description : {{ product.description }}
-        </li>
-        <li>
-            Note : {{ product.rate }}
-        </li>
-        <li>
-            Contenu du produit : {{ product.productcontent }}
-        </li>
-        <li>
-            Config requise : {{ product.requiredspecs }}
-        </li>
-        <li>
-            Edition : {{ product.edition }}
-        </li>
-        <ul class="tags">Tags :
-            <li *ngFor="let tag of product.tags">
-                {{ tag.name }},
+            <li>
+                <h2>Prix : </h2>
+                <p>
+                    {{ product.price }} €
+                </p>
             </li>
-        </ul>
-        <ul class="tags">Plateformes :
-            <li *ngFor="let platform of product.platforms">
-                {{ platform.name }},
+            <li>
+                <h2>Description : </h2>
+                <p>{{ product.description }}</p>
             </li>
+
+            <li>
+                <h2>Contenu du produit : </h2>
+                <p>
+                    {{ product.productcontent }}
+                </p>
+            </li>
+            <li>
+                <h2>Config requise : </h2>
+                <p>{{ product.requiredspecs }}</p>
+
+            </li>
+
+            <ul class="tags">
+                <h2>Tags :</h2>
+                <li *ngFor="let tag of product.tags">
+                    {{ tag.name }},
+                </li>
+            </ul>
+
         </ul>
-        <button class="btn" (click)="addToCart(product)">Acheter</button>
+        <div class="productRight">
+            <div class="productRightContent">
+                <li>
+                    <h2>Nom du produit :</h2>
+                    <p>{{ product.title}}</p>
+
+                </li>
+                <ul class="tags">Plateformes :
+                    <li *ngFor="let platform of product.platforms">
+                        {{ platform.name }},
+                    </li>
+                </ul>
+                <li>
+                    Edition : {{ product.edition }}
+                </li>
+                <li>
+                    Quantité : {{ product.quantity }}
+                </li>
+                <li>
+                    Note : {{ product.rate }}
+                </li>
+                <button class="btn" (click)="addToCart(product)">Acheter</button>
+            </div>
+        </div>
     </ul>
 </div>

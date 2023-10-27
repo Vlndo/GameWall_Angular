@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
-import {ProductsService} from "../../_services/products.service";
-
+import { ProductsService } from "../../_services/products.service";
 
 @Component({
 	selector: "app-home",
@@ -8,16 +7,13 @@ import {ProductsService} from "../../_services/products.service";
 	styleUrls: ["./home.component.css"],
 })
 export class HomeComponent {
-  products: any[] = [];
+	products: any[] = [];
 
-  constructor(private productService: ProductsService ) {
-  }
+	constructor(private productService: ProductsService) {}
 
-  ngOnInit() {
-    this.productService.getProducts().subscribe((response) => {
-      this.products = response["hydra:member"].slice(0,6);
-
-    });
-  }
-
+	ngOnInit() {
+		this.productService.getProducts().subscribe((response) => {
+			this.products = response["hydra:member"].slice(0, 6);
+		});
+	}
 }

@@ -1,13 +1,9 @@
-<p>b-details works!</p>
-<ul *ngIf="bill">
-  {{bill.billNumber}}
-  <li *ngFor="let keey of bill.keeys">
-  clé du produit :{{keey.keyNumber}}
-    <p>titre:{{keey.keyProduct.title}}</p>
-<!--    <p *ngFor="let image of keey.keyProduct.images">-->
-      <img src="http://localhost:8000/media/img/products/{{keey.keyProduct.images[0].link}}">
-
-<!--    </p>-->
-  </li>
-
-</ul>
+<div *ngIf="bill" class="billCard">
+  <div *ngFor="let keey of bill.keeys">
+    <img src="http://localhost:8000/media/img/products/{{keey.keyProduct.images[0].link}}">
+    <p>Clé du produit : {{keey.keyNumber}}</p>
+    <p>Numéro de la facture : {{bill.billNumber}}</p>
+    <p>Nom du produit : {{keey.keyProduct.title}}</p>
+    <p>Prix : </p>
+  </div>
+</div>

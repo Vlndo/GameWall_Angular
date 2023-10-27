@@ -1,0 +1,27 @@
+.userDelete {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border: solid 1px #303a3b;
+	border-radius: 10px;
+	height: 300px;
+}
+
+.checks {
+	display: flex;
+	justify-content: space-between;
+	width: 30%;
+}
+
+#delete {
+	border: red solid 1px;
+	color: red;
+	transition: all ease 0.3s;
+}
+
+#delete:hover {
+	border: #fff solid 1px;
+	color: #fff;
+	background-color: red;
+}
