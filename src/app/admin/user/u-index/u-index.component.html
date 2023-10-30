@@ -1,16 +1,12 @@
-<p>u-index works!</p>
-<div *ngIf="userData">
-<ul>
-    <li><a [routerLink]="['edit',userData.id]">Modifier profil</a></li>
-    <li><a [routerLink]="['delete',userData.id]">Supprimer profil</a></li>
-</ul>
-<div>
-  <p>email : {{ userData.email }}</p>
-  <p>name : {{ userData.name }}</p>
+<div *ngIf="userData" class="userCard">
+  <div class="userInfos">
+    <p>Email : {{ userData.email }}</p>
+    <p>Name : {{ userData.name }}</p>
+    <p>Age : {{userData.age}} ans</p>
+    <p *ngIf="userData.age >= 50">Boomer ?</p>
+  </div>
+  <div class="update">
+    <button [routerLink]="['edit',userData.id]">Modifier profil</button>
+    <button id="delete" [routerLink]="['delete',userData.id]">Supprimer profil</button>
+  </div>
 </div>
-</div>
-
-
-
-
-

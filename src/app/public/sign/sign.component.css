@@ -64,6 +64,7 @@ select option:checked {
 /* Style des éléments input lorsqu'ils sont en focus (clic) */
 .form_container input:focus {
 	background-color: #1e2425;
+	border: #303a3b solid 1px;
 }
 
 /* Style des éléments input en erreur (exemple : champ invalide) */

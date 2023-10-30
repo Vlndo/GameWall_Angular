@@ -1,8 +1,7 @@
-<p>u-delete works!</p>
-<div>
-  <p>voulez vous supprimez votre compte cela est définitif</p>
-  <button [routerLink]="['/admin/user']">retour</button>
-  <button (click)="btDelete()">Supprimer</button>
-
-
+<div class="userDelete">
+  <p>Voulez-vous vraiment supprimer votre compte ?</p>
+  <div class="checks">
+    <button [routerLink]="['/admin/user']">Retour</button>
+    <button id="delete" (click)="btDelete()">Supprimer</button>
+  </div>
 </div>

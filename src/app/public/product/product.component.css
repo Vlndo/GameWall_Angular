@@ -1,0 +1,91 @@
+.card {
+	padding: 20px;
+	margin: 70px;
+	color: white;
+}
+
+.card ul {
+	list-style: none;
+	padding: 0;
+}
+
+.card ul li {
+	margin: 10px 0;
+}
+
+.card img {
+	width: 1150px;
+	height: 500px;
+	object-fit: cover;
+	border: 2px solid #303a3b;
+	border-radius: 5px;
+}
+
+.card button.btn {
+	background-color: #35ff69;
+	color: #1e2425;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.card button.btn:hover {
+	background-color: #1e2425;
+	color: #35ff69;
+	border: solid #35ff69 1px;
+}
+
+.productContent {
+	display: flex;
+}
+
+.productLeft {
+	width: 70%;
+}
+
+.productLeft li {
+	display: flex;
+	flex-direction: column;
+}
+
+.productLeft li h2 {
+	width: 40%;
+}
+
+.productLeft li p {
+	width: 60%;
+}
+
+.productRight {
+	width: 30%;
+	position: relative;
+}
+
+.productRightContent {
+	position: absolute;
+	top: 280px;
+	padding: 10%;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	backdrop-filter: blur(60px) saturate(100%);
+}
+
+.productRightContent li {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.productRightContent .tags {
+	display: flex;
+	align-items: end;
+}
+
+.productRightContent .tags li {
+	margin: 0;
+}
